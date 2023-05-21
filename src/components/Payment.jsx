@@ -95,7 +95,7 @@ const Payment = () => {
         <label className={styles.label}>
           <input
             className={styles.input}
-            type=""
+            type="password"
             placeholder="CVV"
             value={cvv}
             onChange={(e) => setCvv(e.target.value)}
