@@ -4,7 +4,7 @@ import { Navigate } from 'react-router';
 export default function PrivateRoute({children}) {
  const isAuth = true;
  
- if(isAuth){
+ if(!isAuth){
    return <Navigate to='/login' />
  }
  return children;
