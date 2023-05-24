@@ -5,6 +5,7 @@ import Payment from './Payment'
 import Login from './Login'
 import Plan_trip from './Plan_trip'
 import Explore_destinations from './Explore_destinations'
+import PrivateRoute from './PrivateRoute'
 
 
 export default function AllRoutes() {
@@ -12,10 +13,22 @@ export default function AllRoutes() {
     <div>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/payment' element={<Payment/>}/>
+          <Route path='/payment' element={
+            <PrivateRoute>
+              <Payment/>
+            </PrivateRoute>
+          }/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/plan-a-trip' element={<Plan_trip/>}/>
-          <Route path='/explore' element={<Explore_destinations/>}/>
+          <Route path='/plan-a-trip' element={
+            <PrivateRoute>
+              <Plan_trip/>
+            </PrivateRoute>
+          }/>
+          <Route path='/explore' element={
+            <PrivateRoute>
+              <Explore_destinations/>     
+            </PrivateRoute>
+          }/>
         </Routes>
     </div>
   )
