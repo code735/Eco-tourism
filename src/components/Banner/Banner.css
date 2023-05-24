@@ -1,0 +1,25 @@
+.banner {
+    color: white;
+    object-fit: contain;
+    height: 550px;
+  }
+
+  .banner-button {
+    cursor: pointer;
+    margin-right: 2rem;
+  }
+  .banner-title{
+    /* margin-top: 200px; */
+    font-size: 3rem;
+    font-weight: 800;
+    /* padding-bottom: 0.3rem; */
+  }
+  .banner-contents {
+    padding-top: 200px;
+    height: 300px;
+  }
+  .related-main{
+    display: flex;
+    background-color: #eaeded;
+    /* grid-template-columns: repeat(1fr 1fr 1fr); */
+}
