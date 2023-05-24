@@ -6,5 +6,59 @@
       "cvv": 999,
       "fullName": "Rohit Khanna"
     }
+  ],
+  "related": [
+    {
+      "id": 1,
+      "title": "Trekking",
+      "price": 100,
+      "location": "Palaruvi waterfalls",
+      "image": "https://images.pexels.com/photos/2629233/pexels-photo-2629233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 2,
+      "title": "Entry Fee",
+      "price": 40,
+      "location": "Thommankuth",
+      "image": "https://images.pexels.com/photos/14557814/pexels-photo-14557814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 3,
+      "title": "Sightseeing",
+      "price": 50,
+      "location": "Athirapally waterfalls",
+      "image": "https://images.pexels.com/photos/67566/palm-tree-palm-ocean-summer-67566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 4,
+      "title": "Photography",
+      "price": 100,
+      "location": "Palaruvi Mountain",
+      "image": "https://images.pexels.com/photos/2418597/pexels-photo-2418597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ],
+  "camping": [
+    {
+      "id": 1,
+      "title": "Lake View 'N' Kalamkunnu (2 Persons For One Room)",
+      "price": 5000,
+      "about": "Lake view 'n' Kalamkunnu is the nearest camping destination with full ...",
+      "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 2,
+      "title": "Bamboo Hut-Jungle Island (2 Persons For 24 Hour)",
+      "price": 7500,
+      "about": "Over Night in Bamboo Hut Visitors can enjoy the scenic beauty of fore...      ",
+      "image": "https://images.pexels.com/photos/6280686/pexels-photo-6280686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 3,
+      "title": "Kurumthotti Top Hut (2 Persons For 24 Hour)",
+      "price": 8000,
+      "about": "Lake view 'n' Kalamkunnu is the nearest camping destination with full ...",
+      "image": "https://images.pexels.com/photos/4275885/pexels-photo-4275885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  
   ]
 }
