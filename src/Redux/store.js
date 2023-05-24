@@ -1,12 +1,9 @@
 // store.js
 
-import { createStore, combineReducers } from 'redux';
+import { createStore} from 'redux';
 import reducer from './reducer';
 
-const rootReducer = combineReducers({
-  login: reducer
-});
 
-const store = createStore(rootReducer);
+const store = createStore(reducer);
 
 export default store;

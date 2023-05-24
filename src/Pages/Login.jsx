@@ -3,13 +3,14 @@ import loginLogo from '../Images/login-page-logo.png'
 import jwtDecode from 'jwt-decode';
 import React, { useEffect } from 'react';
 import {Flex,Box,Image} from '@chakra-ui/react'
+import { useSelector } from 'react-redux';
 
 export default function Login() {
 
   // redux
-  
+  const {isAuthenticated} = useSelector(state=>state)
   // redux
-
+console.log(isAuthenticated)
 
   function handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);

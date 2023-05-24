@@ -14,7 +14,7 @@ import {
     error: null
   };
   
-  const loginReducer = (state = initialState, action) => {
+  const reducer = (state = initialState, action) => {
     switch (action.type) {
       case LOGIN_REQUEST:
         return {
@@ -55,5 +55,5 @@ import {
     }
   };
   
-  export default loginReducer;
+  export default reducer;
   
