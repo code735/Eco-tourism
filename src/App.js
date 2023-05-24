@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Payment from "./components/Payment";
+import AllRoutes from "./Pages/AllRoutes";
 
 function App() {
   return (
     <div className="App">
-      <Payment />
+      <AllRoutes/>
     </div>
   );
 }
