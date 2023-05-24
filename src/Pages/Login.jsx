@@ -1,11 +1,21 @@
+import swan from '../Images/swan.jpg'
+import loginLogo from '../Images/login-page-logo.png'
 import jwtDecode from 'jwt-decode';
 import React, { useEffect } from 'react';
+import {Flex,Box,Image} from '@chakra-ui/react'
 
 export default function Login() {
+
+  // redux
+  
+  // redux
+
+
   function handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
     var user_obj = jwtDecode(response.credential)
 
+    console.log(user_obj.email_verified)
     console.log(user_obj)
   }
 
@@ -23,8 +33,53 @@ export default function Login() {
   }, []);
 
   return (
-    <div>
-      <div id="signInDiv"></div>
+    <div style={{
+      background:`url(${swan})`,
+      backgroundSize:"cover",
+      backgroundRepeat:"no-repeat",
+      backgroundPosition:"center",
+      width:'100vw',
+      height:'100vh'
+    }}>
+      <Flex
+      className='signin-and-heading-text-flex-box' 
+      >
+        <Box width={'50%'} 
+        height={'100vh'} 
+        display={'flex'} 
+        flexDirection={'column'} 
+        alignItems={'center'} 
+        justifyContent={'space-around'}
+        >
+          <Image src={loginLogo} w={'250px'}/>
+          <div id="signInDiv"></div>
+        </Box>
+        <Box 
+        width={'50%'}
+        textAlign={'left'}
+        color={'white'}
+        className='signin-box-text'
+        >
+          <h4
+          style={{
+            fontFamily:'Italiana, serif',
+            fontWeight:'100',
+            fontSize:"3.2rem",
+            width:"50%"
+          }}
+          className='login-heading'
+          >Login to an Authentic  eco-tourism Experience</h4>
+          <h5
+           style={{
+            fontFamily:'Estonia,cursive',
+            fontWeight:'100',
+            fontSize:"2.3rem",
+            width:"85%"
+          }}
+          className='login-para'
+          >Step into the enchanting world of eco-tourism and embrace the rustic charm of authentic experiences. Immerse yourself in the beauty of nature as you embark on a sustainable journey.</h5>
+        </Box>
+      </Flex>
     </div>
   );
 }
