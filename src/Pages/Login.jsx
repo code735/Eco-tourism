@@ -1,23 +1,34 @@
 import swan from '../Images/swan.jpg'
 import loginLogo from '../Images/login-page-logo.png'
 import jwtDecode from 'jwt-decode';
-import React, { useEffect } from 'react';
-import {Flex,Box,Image} from '@chakra-ui/react'
-import { useSelector } from 'react-redux';
+import React, { useEffect} from 'react';
+import {Flex,
+        Box,
+        Image
+      } from '@chakra-ui/react'
+import { useDispatch, useSelector } from 'react-redux';
+import { loginFailure, loginSuccess } from '../Redux/action';
 
 export default function Login() {
 
+  let dispatch = useDispatch();
+   // redux
+   const {isAuthenticated} = useSelector(state=>state)
   // redux
-  const {isAuthenticated} = useSelector(state=>state)
-  // redux
-console.log(isAuthenticated)
+  console.log(isAuthenticated)
 
   function handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
     var user_obj = jwtDecode(response.credential)
 
-    console.log(user_obj.email_verified)
+    var auth = user_obj.email_verified;
     console.log(user_obj)
+    if(auth){
+      dispatch(loginSuccess(user_obj))
+    }
+    else{
+      dispatch(loginFailure(user_obj))
+    }
   }
 
   useEffect(() => {
@@ -40,7 +51,8 @@ console.log(isAuthenticated)
       backgroundRepeat:"no-repeat",
       backgroundPosition:"center",
       width:'100vw',
-      height:'100vh'
+      height:'100vh',
+      overflow:'hidden'
     }}>
       <Flex
       className='signin-and-heading-text-flex-box' 
@@ -66,7 +78,8 @@ console.log(isAuthenticated)
             fontFamily:'Italiana, serif',
             fontWeight:'100',
             fontSize:"3.2rem",
-            width:"50%"
+            width:"50%",
+            display:'flex',
           }}
           className='login-heading'
           >Login to an Authentic  eco-tourism Experience</h4>
