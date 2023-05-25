@@ -8,14 +8,19 @@ import {Flex,
       } from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux';
 import { loginFailure, loginSuccess } from '../Redux/action';
+import {useNavigate} from 'react-router-dom'
+
 
 export default function Login() {
 
   let dispatch = useDispatch();
    // redux
-   const {isAuthenticated} = useSelector(state=>state)
+   const {isAuthenticated,privateroute} = useSelector(state=>state)
   // redux
-  console.log(isAuthenticated)
+
+  //router
+  const navigate = useNavigate();
+  //router
 
   function handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
@@ -30,6 +35,13 @@ export default function Login() {
       dispatch(loginFailure(user_obj))
     }
   }
+
+  useEffect(()=>{
+    if(isAuthenticated){
+      navigate(`${privateroute}`)
+    }
+    console.log(privateroute)
+  },[isAuthenticated])
 
   useEffect(() => {
     /*eslint-disable no-undef*/

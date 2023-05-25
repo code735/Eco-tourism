@@ -1,10 +1,11 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE} from './actionTypes';
+import { LOGIN_SUCCESS, LOGIN_FAILURE, SEND_TO} from './actionTypes';
 
 const initialState = {
   isLoading: false,
   isAuthenticated: false,
   user: null,
-  error: null
+  error: null,
+  privateroute:"/"
 };
 
 const reducer = (state = initialState, action) => {
@@ -26,7 +27,11 @@ const reducer = (state = initialState, action) => {
         user: null,
         error: action.payload
       };
-
+    case SEND_TO:
+      return{
+        ...state,
+        privateroute:action.payload
+      }
     default:
       return state;
   }

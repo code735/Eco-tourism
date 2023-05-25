@@ -1,4 +1,5 @@
 import "./App.css";
+import './styles/fonts.css'
 import AllRoutes from "./Pages/AllRoutes";
 import './styles/responsive.css'
 

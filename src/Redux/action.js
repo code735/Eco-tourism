@@ -4,7 +4,8 @@ import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
-    LOGOUT
+    LOGOUT,
+    SEND_TO
   } from './actionTypes';
   
   export const loginRequest = () => {
@@ -32,4 +33,12 @@ import {
       type: LOGOUT
     };
   };
+
+
+  export const SEND_TO_FUNCTION=(payload)=>{
+    return {
+      type:SEND_TO,
+      payload:payload
+    }
+  }
   
