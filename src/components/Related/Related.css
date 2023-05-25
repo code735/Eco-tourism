@@ -1,10 +1,9 @@
-.related-box>img{
+.poster{
     width: 300px;
     height:250px
 }
-/* .related-box{
-    display: flex;
-} */
-/* .right-box > Heading{
-    padding-top:30px ;
-} */
+.poster:hover{
+    width: 320px;
+    height: 270px;
+    transition: all;
+}
