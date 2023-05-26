@@ -6,6 +6,7 @@ import Login from './Login'
 import Plan_trip from './Plan_trip'
 import Explore_destinations from './Explore_destinations'
 import PrivateRoute from './PrivateRoute'
+import About from './About'
 
 
 export default function AllRoutes() {
@@ -13,6 +14,7 @@ export default function AllRoutes() {
     <div>
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/aboutus' element={<About/>}/>
           <Route path='/payment' element={
             <PrivateRoute>
               <Payment/>
