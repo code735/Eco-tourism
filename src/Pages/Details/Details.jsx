@@ -8,6 +8,7 @@ import { useRef, useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import axios from "axios";
 import Bottom from '../../components/Bottom/Bottom'
+import Map from '../../components/Map/Map'
 
 
 
@@ -76,6 +77,7 @@ const Details = () => {
         </Box>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <Camping />
+        <Map/>
         
       </Box>
     </div>

@@ -11,13 +11,12 @@ import {StarIcon} from "@chakra-ui/icons"
 
 
 
-const Related = ({ title, price, location, image }) => {
+const Related = ({ title, price, location, image ,review}) => {
 
     let rating=4;
 
 
     return (
-        <Box >
 
 
 
@@ -37,15 +36,12 @@ const Related = ({ title, price, location, image }) => {
                                     color={i < rating ? 'teal.500' : 'gray.300'}
                                 />
                             ))}
-                        <Box as='span' ml='2' color='gray.600' fontSize='sm'>25
-                             reviews
-                        </Box>
+                        <Box as='span' ml='2' color='gray.600' fontSize='sm'>{review} reviews</Box>
                     </Box>
                 </Box>
             </Box>
 
 
-        </Box>
     )
 }
 
