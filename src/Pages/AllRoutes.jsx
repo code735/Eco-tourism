@@ -7,6 +7,7 @@ import Plan_trip from './Plan_trip'
 import Explore_destinations from './Explore_destinations'
 import PrivateRoute from './PrivateRoute'
 import About from './About'
+import Profile from './Profile'
 
 
 export default function AllRoutes() {
@@ -31,6 +32,7 @@ export default function AllRoutes() {
               <Explore_destinations/>     
             </PrivateRoute>
           }/>
+          <Route path='/profile' element={<Profile/>}/>
         </Routes>
     </div>
   )

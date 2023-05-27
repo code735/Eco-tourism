@@ -54,6 +54,13 @@ export default function Navbar() {
             color:"white",
             textAlign:"left",
           }}>About Us</NavLink>
+          <NavLink to={'/profile'}  style={{
+            fontFamily:'Italiana, serif',
+            fontWeight:'100',
+            fontSize:"1.2rem",
+            color:"white",
+            textAlign:"left",
+          }}>Profile</NavLink>
         </Flex>
         <Menu className='menu'>
           <MenuButton

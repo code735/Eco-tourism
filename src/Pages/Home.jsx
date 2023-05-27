@@ -23,8 +23,8 @@ export default function Home() {
     >
 
       <Navbar/>
-      <Box width={'100%'} height={'100%'} position={'absolute'} top={'0'} left={'0'} background={'#0000006e'}></Box>
-      <Image src={`${circle}`} position={'absolute'} right={'-13%'} bottom={'-27%'} width={'33%'}/>
+      <Box width={'100%'} height={'100%'} position={'absolute'} top={'0'} left={'0'} background={'#0000006e'} ></Box>
+      <Image src={`${circle}`} position={'absolute'} right={'0%'} top={'22%'} width={'32%'} opacity={'28%'}/>
       
       <Box position={'relative'} className='homepage-text'>
         <h4 
