@@ -20,8 +20,12 @@ body{
   padding-bottom: 0;
 }
 
-.homepage-text{
- width: 80%;       
+.homepage-text{    
+  width: 80%;
+  height: 65%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .homepage-description{
@@ -32,3 +36,4 @@ body{
 .about-use-second-para{
   display: block;
 }
+
