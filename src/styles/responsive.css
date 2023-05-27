@@ -1,0 +1,55 @@
+/* devices below 768 */
+
+@media (max-width:768px){
+
+    .IconButton{
+        display: block !important;
+    }
+
+    .nav{
+        display: none !important;
+    }
+
+    /* Homepage section */
+    .homepage-heading{
+        text-align: center;
+    }
+
+    .homepage-heading{
+        font-size: 2rem;
+        width: 100%;
+        padding-bottom: 5%;
+    }
+
+    .homepage-text{
+        width: 100%;
+        height: 100%;
+    }
+
+    .homepage-description{
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-use-second-para{
+        display: none;
+    }
+}
+
+/* devices below 1024 */
+
+@media (max-width:1024px) {
+
+    /* Login.jsx */
+
+    .signin-and-heading-text-flex-box{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signin-box-text{
+        display: none;
+    }
+    
+}
