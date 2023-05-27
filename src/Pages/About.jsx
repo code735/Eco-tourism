@@ -27,7 +27,7 @@ const About = () => {
     backgroundPosition={'center'}
     backgroundSize={'cover'}
     backgroundRepeat={'no-repeat'}
-    padding={'5%'}
+    padding={'3%'}
     position={'relative'}
     >
       <Box 

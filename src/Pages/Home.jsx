@@ -18,7 +18,7 @@ export default function Home() {
     justifyContent={'space-between'}
     position={'relative'}
     gap={'5%'}
-    padding={'5%'}
+    padding={'3%'}
     overflow={'hidden'}
     >
 
