@@ -14,7 +14,7 @@ export default function AllRoutes() {
     <div>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/aboutus' element={<About/>}/>
+          <Route path='/about' element={<About/>}/>
           <Route path='/payment' element={
             <PrivateRoute>
               <Payment/>

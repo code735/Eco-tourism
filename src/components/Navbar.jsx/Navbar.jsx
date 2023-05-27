@@ -19,14 +19,14 @@ export default function Navbar() {
           <NavLink to={'/explore'} style={{
             fontFamily:'Italiana, serif',
             fontWeight:'100',
-            fontSize:"1.5rem",
+            fontSize:"1.2rem",
             color:"white",
             textAlign:"left",
           }}>Destinations</NavLink>
-          <NavLink to={'/aboutus'}  style={{
+          <NavLink to={'/about'}  style={{
             fontFamily:'Italiana, serif',
             fontWeight:'100',
-            fontSize:"1.5rem",
+            fontSize:"1.2rem",
             color:"white",
             textAlign:"left",
           }}>About Us</NavLink>

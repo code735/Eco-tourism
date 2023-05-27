@@ -19,7 +19,11 @@
     .homepage-description{
         width: 100%;
         text-align: center;
-      }
+    }
+
+    .about-use-second-para{
+        display: none;
+    }
 }
 
 /* devices below 1024 */
