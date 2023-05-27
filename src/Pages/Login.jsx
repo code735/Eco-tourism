@@ -90,7 +90,7 @@ export default function Login() {
             fontFamily:'Italiana, serif',
             fontWeight:'100',
             fontSize:"3.2rem",
-            width:"50%",
+            width:"49%",
             display:'flex',
           }}
           className='login-heading'
