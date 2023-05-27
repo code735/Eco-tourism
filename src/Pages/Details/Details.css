@@ -1,12 +1,20 @@
 .banner {
     color: white;
     object-fit: contain;
-    height: 550px;
+    height: 600px;
+    transition: background-image 0.5s ease-in-out;
+  }
+  .banner:hover{
+    background-size: 110%;
   }
 
   .banner-button {
     cursor: pointer;
     margin-right: 2rem;
+  }
+
+  .banner-button:hover {
+    color: #d8efea;
   }
   .banner-title{
     /* margin-top: 200px; */
@@ -22,4 +30,7 @@
     display: flex;
     background-color: #eaeded;
     /* grid-template-columns: repeat(1fr 1fr 1fr); */
+}
+.main-box{
+  background-color: #f8f8f8;
 }

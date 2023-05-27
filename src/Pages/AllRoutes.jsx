@@ -8,6 +8,8 @@ import Explore_destinations from './Explore_destinations'
 import PrivateRoute from './PrivateRoute'
 import About from './About'
 import Profile from './Profile'
+import City from '../components/City/City'
+import Details from './Details/Details'
 
 
 export default function AllRoutes() {
@@ -16,6 +18,8 @@ export default function AllRoutes() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
+          <Route path='/city' element={<City/>}/>
+          <Route path='/city/:id' element={<Details/>}/>
           <Route path='/payment' element={
             <PrivateRoute>
               <Payment/>
