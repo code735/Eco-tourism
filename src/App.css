@@ -2,7 +2,16 @@ body{
   overflow: hidden;
 }
 
+/* Navbar */
 
+.IconButton{
+  color: black;
+  background: white;
+  display: none !important;
+}
+.nav{
+  display: flex;
+}
 /* Login */
 
 .signin-box-text{

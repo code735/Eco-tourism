@@ -1,9 +1,23 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Box, Image,Flex } from '@chakra-ui/react'
+import { 
+  Box, 
+  Image,
+  Flex, 
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+  IconButton
+} from '@chakra-ui/react'
 import logo from '../../Images/logo.svg'
 import { useDispatch } from 'react-redux'
 import { SEND_TO } from '../../Redux/actionTypes'
+import { HamburgerIcon,AddIcon,ExternalLinkIcon } from '@chakra-ui/icons'
 
 export default function Navbar() {
 
@@ -23,7 +37,7 @@ export default function Navbar() {
         <NavLink to={'/'}>
           <Image src={logo} width={'50px'}/>
         </NavLink>
-        <Flex alignItems={'center'} gap={"20px"}>
+        <Flex alignItems={'center'} gap={"20px"} className='nav'>
           <NavLink to={'/explore'} style={{
             fontFamily:'Italiana, serif',
             fontWeight:'100',
@@ -41,6 +55,26 @@ export default function Navbar() {
             textAlign:"left",
           }}>About Us</NavLink>
         </Flex>
+        <Menu className='menu'>
+          <MenuButton
+            as={IconButton}
+            aria-label='Options'
+            icon={<HamburgerIcon />}
+            variant='outline'
+            className='IconButton'
+          />
+            <MenuList>
+              <MenuItem>
+                Destinations
+              </MenuItem>
+              <MenuItem>
+                About Us
+              </MenuItem>
+              <MenuItem>
+                Profile
+              </MenuItem>
+            </MenuList>
+        </Menu>
     </Box>
   )
 }

@@ -7,7 +7,7 @@ const About = () => {
   const headingStyle = {
     fontFamily: 'Italiana, serif',
     color:'white',
-    textAlign:"center",
+    textAlign:"left",
     fontSize:"2.5rem",
     padding:"2% 0"
   };
@@ -15,7 +15,7 @@ const About = () => {
   const paraStyle = {
     fontFamily: 'Estonia, cursive',
     color:'white',
-    fontSize:"1.9rem",
+    fontSize:"2.1rem",
     padding:"2% 0"
   };
 
@@ -36,7 +36,7 @@ const About = () => {
       position={'absolute'}
       top={'0'}
       left={'0'}
-      background={'#0000004f'}
+      background={'#000000a3'}
       ></Box>
       <Navbar/>
       <Box

@@ -1,6 +1,15 @@
 /* devices below 768 */
 
 @media (max-width:768px){
+
+    .IconButton{
+        display: block !important;
+    }
+
+    .nav{
+        display: none !important;
+    }
+
     /* Homepage section */
     .homepage-heading{
         text-align: center;
