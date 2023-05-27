@@ -2,7 +2,16 @@ body{
   overflow: hidden;
 }
 
+/* Navbar */
 
+.IconButton{
+  color: black;
+  background: white;
+  display: none !important;
+}
+.nav{
+  display: flex;
+}
 /* Login */
 
 .signin-box-text{
@@ -20,8 +29,12 @@ body{
   padding-bottom: 0;
 }
 
-.homepage-text{
- width: 80%;       
+.homepage-text{    
+  width: 80%;
+  height: 65%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .homepage-description{
@@ -32,3 +45,4 @@ body{
 .about-use-second-para{
   display: block;
 }
+
