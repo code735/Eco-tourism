@@ -3,47 +3,45 @@ import {
     Box,
     Container,
     Heading,
-    SimpleGrid,Text
+    SimpleGrid, Text
 } from '@chakra-ui/react';
-import axios from "axios";
 import { useEffect, useState } from 'react';
 import "./Related.css"
-const Related = () => {
+import {StarIcon} from "@chakra-ui/icons"
 
-    const [related, setRelated] = useState([]);
 
-    useEffect(() => {
-        axios.get("http://localhost:8080/related")
-            .then((res) => {
-                setRelated(res.data);
-            })
-    }, [])
+
+const Related = ({ title, price, location, image ,review}) => {
+
+    let rating=4;
 
 
     return (
-        <Box style={{backgroundColor:"#f8f8f8"}}>
-            <Heading as='h4' size='md' style={{marginLeft:"-1200px"}}>
-                Related
-            </Heading>&nbsp;&nbsp;&nbsp;&nbsp;
-            <SimpleGrid columns={4} spacing={5}>
-      
-            {
-                related.length > 0 && related.map((ele) => {
-                    return (
-                        <Box className="related-box"  key={ele.id} p={4} borderWidth='1px' borderColor='gray.200' rounded='lg'>
-                            <img src={ele.image} alt={ele.title} />
-                            <Box className='right-box'>
-                                <Heading as='h3' size='lg' >{ele.title}</Heading>
-                                <Text>{ele.location}</Text>
-                                <Heading as='h3' size='sm' style={{lineHeight:"3",margin:"5px"}} >From ₹{ele.price}/per person</Heading>
-                            </Box>
-                        </Box>
-                    )
-                })
-            }
-            </SimpleGrid>
 
-        </Box>
+
+
+            <Box className="related-box" p={4} borderWidth='1px' borderColor='gray.200'>
+                <img className="poster" src={image} alt={title} />
+                <Box className='right-box'>
+                    <Heading as='h3' size='lg' noOfLines={2} >{location}</Heading>
+                    <Text >{title}</Text>
+                    <Heading as='h3' size='sm' style={{ lineHeight: "3", margin: "5px" }} >From <span style={{ color: '#00b5b7' }}>₹{price}</span>/per person</Heading>
+
+                    <Box display='flex' mt='2' alignItems='center'>
+                        {Array(5)
+                            .fill('')
+                            .map((_, i) => (
+                                <StarIcon
+                                    key={i}
+                                    color={i < rating ? 'teal.500' : 'gray.300'}
+                                />
+                            ))}
+                        <Box as='span' ml='2' color='gray.600' fontSize='sm'>{review} reviews</Box>
+                    </Box>
+                </Box>
+            </Box>
+
+
     )
 }
 
