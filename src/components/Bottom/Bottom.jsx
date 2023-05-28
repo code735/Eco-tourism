@@ -29,34 +29,44 @@ const Bottom = () => {
     <Center>
     <SimpleGrid columns={[2, null, 5]}style={{margin: "50px", width:"50%",}} spacing='40px' >
     <Box border="1px solid grey" className='icons'>
-      <button>
+     <Center>
+     <button>
         <img src="https://www.keralatourism.org/images/eco-tourism/inn1.png" alt="" />
       SAFARIS
       </button>
+     </Center>
     </Box>
     <Box border="1px solid grey" className='icons'>
-      <button>
+     <Center>
+     <button>
         <img src="https://www.keralatourism.org/images/eco-tourism/inn2.png" alt="" />
       TREKKING
       </button>
+     </Center>
     </Box>
     <Box border="1px solid grey" className='icons'>
-      <button>
+     <Center>
+     <button>
         <img src="https://www.keralatourism.org/images/eco-tourism/inn3.png" alt="" />
       CAMPING
       </button>
+     </Center>
     </Box>
     <Box border="1px solid grey" className='icons'>
-      <button>
+     <Center>
+     <button>
         <img src="https://www.keralatourism.org/images/eco-tourism/image-icon.png" alt="" />
       PHOTOS
       </button>
+     </Center>
     </Box>
     <Box border="1px solid grey" className='icons'>
+      <Center>
       <button>
         <img src="https://www.keralatourism.org/images/eco-tourism/video%20icone.png" alt="" />
       VIDEOS
       </button>
+      </Center>
     </Box>
     
   </SimpleGrid>
