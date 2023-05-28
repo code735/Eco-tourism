@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Details.css"
-import { Button, Box, Heading, SimpleGrid } from '@chakra-ui/react'
+import { Button, Box, Heading, SimpleGrid ,Center} from '@chakra-ui/react'
 import Related from '../../components/Related/Related'
 import About from '../../components/About/About'
 import Camping from '../../components/Camping/Camping'
@@ -45,13 +45,18 @@ const Details = () => {
           backgroundAttachment: "fixed"
         }}>
         <div className='banner-contents'>
+          <Center>
           <h1 className='banner-title'>{city.cityname}</h1>
+
+          </Center>
         </div>
         <div className='banner-buttons'>
           {/* <button className='banner-button'>Book Now</button>
             <button className='banner-button'>Explore</button> */}
-          <Button className='banner-button' colorScheme='pink'>Book Now</Button>
+         <Center>
+         <Button className='banner-button' colorScheme='pink'>Book Now</Button>
           <Button className='banner-button' colorScheme='pink' onClick={handleClick} >EXPLORE</Button>
+         </Center>
         </div>
       </header>
       <Box>
