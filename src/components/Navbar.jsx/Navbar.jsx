@@ -24,7 +24,7 @@ export default function Navbar() {
   const dispatch = useDispatch();
 
   const handleClick=()=>{
-    dispatch({type:SEND_TO,payload:'/explore'})
+    dispatch({type:SEND_TO,payload:'/city'})
   }
 
   return (
@@ -38,7 +38,7 @@ export default function Navbar() {
           <Image src={logo} width={'50px'}/>
         </NavLink>
         <Flex alignItems={'center'} gap={"20px"} className='nav'>
-          <NavLink to={'/explore'} style={{
+          <NavLink to={'/city'} style={{
             fontFamily:'Italiana, serif',
             fontWeight:'100',
             fontSize:"1.2rem",
