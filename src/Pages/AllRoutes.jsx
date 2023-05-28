@@ -18,7 +18,11 @@ export default function AllRoutes() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
-          <Route path='/city' element={<City/>}/>
+          <Route path='/city' element={
+            <PrivateRoute>
+              <Explore_destinations/>     
+            </PrivateRoute>
+          }/>
           <Route path='/city/:id' element={<Details/>}/>
           <Route path='/payment' element={
             <PrivateRoute>
@@ -31,11 +35,7 @@ export default function AllRoutes() {
               <Plan_trip/>
             </PrivateRoute>
           }/>
-          <Route path='/explore' element={
-            <PrivateRoute>
-              <Explore_destinations/>     
-            </PrivateRoute>
-          }/>
+          
           <Route path='/profile' element={<Profile/>}/>
         </Routes>
     </div>

@@ -1,8 +1,11 @@
+/* Navbar */
 body{
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Navbar */
+body::-webkit-scrollbar{
+  width: 0;
+}
 
 .IconButton{
   color: black;
