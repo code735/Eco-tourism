@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar.jsx/Navbar'
 import { Box } from '@chakra-ui/react'
 import Home from '../Images/home.svg'
 import City from '../components/City/City'
+import { Preloader } from '../components/Preloader'
 
 export default function Explore_destinations() {
   return (
@@ -15,6 +16,7 @@ export default function Explore_destinations() {
     h={'100vh'}
     position={'relative'}
     >
+      <Preloader/>
       <Navbar/>
       <Box width={'100%'} height={'100%'} position={'absolute'} top={'0'} left={'0'} background={'#0000006e'}>
         <City/>

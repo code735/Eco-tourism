@@ -9,13 +9,13 @@ const City = () => {
 
     const [state, setState] = useState([]);
 
-    useEffect(() => {
-        axios.get("http://localhost:8080/city")
-            .then((res) => {
-                setState(res.data);
-                // console.log(res.data);
-            })
-    }, [])
+    // useEffect(() => {
+    //     axios.get("http://localhost:8080/city")
+    //         .then((res) => {
+    //             setState(res.data);
+    //             // console.log(res.data);
+    //         })
+    // }, [])
 
 
 
