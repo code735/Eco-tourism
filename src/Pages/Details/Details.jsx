@@ -20,7 +20,7 @@ const Details = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/city/${id}`)
+    axios.get(`https://eco-tourism-backend.onrender.com/city/${id}`)
       .then((res) => {
         setCity(res.data);
         console.log(city);
