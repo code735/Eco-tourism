@@ -1,23 +1,20 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import data from '../../db.json'
 import { Link } from "react-router-dom";
 import { Flex ,Box,Heading, Text, grid} from '@chakra-ui/react';
-
+import axios from 'axios';
 
 const City = () => {
 
     const [state, setState] = useState([]);
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:8080/city")
-    //         .then((res) => {
-    //             setState(res.data);
-    //             // console.log(res.data);
-    //         })
-    // }, [])
-
-
+    useEffect(()=>{
+        axios.get(`https://eco-tourism-backend.onrender.com/city`)
+        .then((Response)=>{
+            setState(Response.data)
+        })
+    },[])
 
     return (
 
@@ -30,12 +27,16 @@ const City = () => {
         padding={'5%'}
         width={'78%'}
         margin={'auto'}
+        marginTop={'5%'}
+        paddingBottom={0}
         >
             {
-                state.map((ele) => {
-                    return <Link to={`/city/${ele.id}`}>
+                state.map((ele,index) => {
+                    return <Link to={`/city/${ele.id}`} key={index}>
                         <Box textAlign={'center'}>
-                            <img src={ele.image} alt="" />
+                            <img src={ele.image} alt="" style={{
+                                borderRadius:"20px"
+                            }}/>
                             <Heading as='h3' size='sm' >{ele.cityname}</Heading>
                         </Box>
                     </Link>
