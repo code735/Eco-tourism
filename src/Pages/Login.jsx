@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { Flex, Box, Image, useToast } from '@chakra-ui/react';
+import { Flex, Box, Image, useToast ,Button} from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginFailure, loginSuccess } from '../Redux/action';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 import swan from '../Images/swan.jpg';
@@ -68,18 +68,35 @@ export default function Login() {
             justifyContent={'space-around'}
           >
             <Image src={loginLogo} w={'250px'} />
-            <GoogleLogin
-              onSuccess={handleCredentialResponse}
-              theme='outline'
-              shape='square'
-              size='medium'
-              logo_alignment='center'
-              width='200px'
-              onError={() => {
-                console.log('Login Failed');
+            <Flex textAlign={'center'} flexDirection={'column'}  gap={'20px'}>
+              <GoogleLogin
+                onSuccess={handleCredentialResponse}
+                theme='outline'
+                shape='square'
+                size='medium'
+                logo_alignment='center'
+                width='200px'
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+                text='continue_with'
+              />
+              <Button 
+              className="back-to-home-btn" 
+              height={'35px'} 
+              border={'2px solid white'} 
+              background={'transparent'} 
+              color={'white'}
+              _hover={{
+                color:"black",
+                background:"white"
               }}
-              text='continue_with'
-            />
+              fontSize={'.9rem'}
+              onClick={()=>{
+                navigate('/');           
+              }}
+              >Back To Home</Button>
+            </Flex>
           </Box>
           <Box width={'50%'} textAlign={'left'} color={'white'} className="signin-box-text">
             <h4

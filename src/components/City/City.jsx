@@ -37,7 +37,7 @@ const City = () => {
                             <img src={ele.image} alt="" style={{
                                 borderRadius:"20px"
                             }}/>
-                            <Heading as='h3' size='sm' >{ele.cityname}</Heading>
+                            <Heading as='h3' size='sm' mt={'2%'}>{ele.cityname}</Heading>
                         </Box>
                     </Link>
                 })
