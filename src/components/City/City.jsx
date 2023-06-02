@@ -24,10 +24,10 @@ const City = () => {
         display={'grid'} 
         gridTemplateColumns={'repeat(2,1fr)'} 
         color={'white'}
-        padding={'5%'}
+        padding={'3% 0'}
         width={'50%'}
         margin={'auto'}
-        marginTop={'5%'}
+        marginTop={'7%'}
         paddingBottom={0}
         overflowY={'scroll'}
         className='explore-dest'
