@@ -49,3 +49,8 @@ body::-webkit-scrollbar{
   display: block;
 }
 
+
+/* Explore Destination */
+.explore-dest::-webkit-scrollbar{
+  display: none;
+}

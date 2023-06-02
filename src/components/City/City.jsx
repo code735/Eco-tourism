@@ -22,13 +22,16 @@ const City = () => {
         <Box 
         style={{gap:"20px"}} 
         display={'grid'} 
-        gridTemplateColumns={'repeat(3,1fr)'} 
+        gridTemplateColumns={'repeat(2,1fr)'} 
         color={'white'}
         padding={'5%'}
-        width={'78%'}
+        width={'50%'}
         margin={'auto'}
         marginTop={'5%'}
         paddingBottom={0}
+        overflowY={'scroll'}
+        className='explore-dest'
+        height={'80vh'}
         >
             {
                 state.map((ele,index) => {
@@ -37,7 +40,7 @@ const City = () => {
                             <img src={ele.image} alt="" style={{
                                 borderRadius:"20px"
                             }}/>
-                            <Heading as='h3' size='sm' >{ele.cityname}</Heading>
+                            <Heading as='h3' size='sm' mt={'2%'}>{ele.cityname}</Heading>
                         </Box>
                     </Link>
                 })
