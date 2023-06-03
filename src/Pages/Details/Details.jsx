@@ -57,6 +57,7 @@ const Details = () => {
           as={'h1'} 
           className='banner-title' 
           textTransform={'capitalize'}
+          fontSize={'6.5rem'}
           >{city.cityname}</Heading>
           </Center>
         </div>
