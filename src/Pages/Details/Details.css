@@ -1,7 +1,7 @@
 .banner {
     color: white;
     object-fit: contain;
-    height: 600px;
+    height: 100vh;
     transition: background-image 0.5s ease-in-out;
   }
   .banner:hover{
@@ -18,7 +18,7 @@
   }
   .banner-title{
     /* margin-top: 200px; */
-    font-size: 3rem;
+    font-size: 8rem;
     font-weight: 800;
     /* padding-bottom: 0.3rem; */
   }

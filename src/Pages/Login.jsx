@@ -40,7 +40,7 @@ export default function Login() {
       navigate(`${privateroute}`);
     }
     console.log(privateroute);
-  }, [isAuthenticated]);
+  }, [isAuthenticated]);  
 
   useEffect(() => {
     const storedAuth = localStorage.getItem('isAuthenticated');
