@@ -17,7 +17,6 @@ export default function Explore_destinations() {
     h={'100vh'}
     position={'relative'}
     >
-      <Preloader/>
       <Navbar/>
       <Box width={'100%'} height={'100%'} position={'absolute'} top={'0'} left={'0'} background={'#0000006e'} display={'flex'}>
         <FilterBox/>
