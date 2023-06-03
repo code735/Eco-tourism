@@ -1,11 +1,12 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE, SEND_TO, LOGOUT} from './actionTypes';
+import { LOGIN_SUCCESS, LOGIN_FAILURE, SEND_TO, LOGOUT, SEND_DATA} from './actionTypes';
 
 const initialState = {
   isLoading: false,
   isAuthenticated: false,
   user: null,
   error: null,
-  privateroute:"/"
+  privateroute:"/",
+  cityData:undefined
 };
 
 const reducer = (state = initialState, action) => {
@@ -37,6 +38,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         isAuthenticated:false,
         privateroute:'/'
+      }
+    case SEND_DATA:
+      return{
+        ...state,
+        cityData:action.payload
       }
     default:
       return state;

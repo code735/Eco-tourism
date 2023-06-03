@@ -2,19 +2,29 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import data from '../../db.json'
 import { Link } from "react-router-dom";
-import { Flex ,Box,Heading, Text, grid} from '@chakra-ui/react';
+import { Flex ,Box,Heading, Text, grid, Spinner} from '@chakra-ui/react';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { SEND_DATA_FUNCTION } from '../../Redux/action';
 
 const City = () => {
 
-    const [state, setState] = useState([]);
+    const [state, setState] = useState();
+    const dispatch = useDispatch();
+    const {cityData} = useSelector(state=>state)
 
     useEffect(()=>{
         axios.get(`https://eco-tourism-backend.onrender.com/city`)
         .then((Response)=>{
-            setState(Response.data)
+            dispatch(SEND_DATA_FUNCTION(Response.data));
         })
+        
+        setState(cityData)
     },[])
+
+    useEffect(()=>{
+        setState(cityData)
+    },[cityData])
 
     return (
 
@@ -32,21 +42,27 @@ const City = () => {
         overflowY={'scroll'}
         className='explore-dest'
         height={'80vh'}
+        position={'relative'}
         >
             {
-                state.map((ele,index) => {
+                state?state.map((ele,index) => {
                     return <Link to={`/city/${ele.id}`} key={index}>
                         <Box textAlign={'center'}>
-                            <img src={ele.image} alt="" style={{
-                                borderRadius:"20px"
-                            }}/>
-                            <Heading as='h3' size='sm' mt={'2%'}>{ele.cityname}</Heading>
+                            <Box position={'relative'}>
+                                <img src={ele.image} alt="" style={{
+                                    height:"200px",
+                                    width:"100%",
+                                    borderRadius:"20px"
+                                }}/>
+                                <Heading textTransform={'capitalize'} fontSize={'1rem'} position={'absolute'} top={'0'} left={'0'} background={'white'} padding={'5px 20px'} color={'black'} borderTopLeftRadius={'10px'} borderBottomRightRadius={'10px'}>{ele.terrain}</Heading>
+                            </Box>
+                            <Flex justifyContent={'space-between'}>
+                                <Heading as='h3' padding={'5px'} borderRadius={'10px'} width={'100px'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'} fontWeight={'500'} size='sm' mt={'2%'} textTransform={'capitalize'}>{ele.cityname}</Heading>
+                                <Heading as='h3' padding={'5px'} borderRadius={'10px'} width={'150px'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'} fontWeight={'500'} size='sm' mt={'2%'} textTransform={'capitalize'}>Approx: ₹{ele.price}</Heading>
+                            </Flex>
                         </Box>
                     </Link>
-                })
-
-
-
+                }) : <Spinner width={'100px'} height={'100px'} position={'absolute'} left={'45%'} top={'45%'}/>
             }
 
         </Box>

@@ -36,6 +36,13 @@ export default function Login() {
   }
 
   useEffect(() => {
+    if (isAuthenticated) {
+      navigate(`${privateroute}`);
+    }
+    console.log(privateroute);
+  }, [isAuthenticated]);
+
+  useEffect(() => {
     const storedAuth = localStorage.getItem('isAuthenticated');
     if (storedAuth === 'true') {
       dispatch(loginSuccess()); // Assuming you don't need to pass user_obj here
@@ -46,17 +53,9 @@ export default function Login() {
     localStorage.setItem('isAuthenticated', isAuthenticated);
   }, [isAuthenticated]);
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate(`${privateroute}`);
-    }
-    console.log(privateroute);
-  }, [isAuthenticated]);
-
   return (
     <GoogleOAuthProvider 
     clientId="373264275746-eju7u5qlvit8e986i1b552dn49nb0nvt.apps.googleusercontent.com">
-      <Preloader/>
       <div
         style={{
           background: `url(${swan})`,
