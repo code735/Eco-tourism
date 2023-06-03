@@ -60,7 +60,11 @@ export default function Navbar() {
             fontSize:"1.2rem",
             color:"white",
             textAlign:"left",
-          }}>Profile</NavLink>
+          }}
+          onClick={()=>{
+            dispatch({type:SEND_TO,payload:'/profile'})
+          }}
+          >Profile</NavLink>
         </Flex>
         <Menu className='menu'>
           <MenuButton

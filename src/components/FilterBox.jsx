@@ -52,7 +52,9 @@ export default function FilterBox() {
   return (
     <Box width={'40%'} margin={'0 auto'} marginTop={'5%'} paddingTop={'5%'}>
         <Flex gap={'20px'} padding={'4% 0'}>
-          <Input color={'white'} name='search' onChange={(e)=>{
+          <Input color={'white'} name='search' placeholder='Search by place' _placeholder={{
+            color:"white"
+          }} onChange={(e)=>{
             setsearchterm(e.currentTarget.value)}}/>
           {/* <Button background={'transparent'} border={'1px solid white'} color={'white'}
           onClick={handleSearchClick}
