@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginFailure, loginSuccess } from '../Redux/action';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
-
-import swan from '../Images/swan.jpg';
-import loginLogo from '../Images/login-page-logo.png';
 import jwtDecode from 'jwt-decode';
 import { Preloader } from '../components/Preloader';
+import swan from '../Images/swan.jpg'
+import loginLogo from '../Images/login-page-logo.png'
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -37,6 +36,17 @@ export default function Login() {
   }
 
   useEffect(() => {
+    const storedAuth = localStorage.getItem('isAuthenticated');
+    if (storedAuth === 'true') {
+      dispatch(loginSuccess()); // Assuming you don't need to pass user_obj here
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('isAuthenticated', isAuthenticated);
+  }, [isAuthenticated]);
+
+  useEffect(() => {
     if (isAuthenticated) {
       navigate(`${privateroute}`);
     }
@@ -58,7 +68,8 @@ export default function Login() {
           overflow: 'hidden',
         }}
       >
-        <Flex className="signin-and-heading-text-flex-box">
+        {/* Rest of the code */
+          <Flex className="signin-and-heading-text-flex-box">
           <Box
             width={'50%'}
             height={'100vh'}
@@ -124,8 +135,11 @@ export default function Login() {
               Immerse yourself in the beauty of nature as you embark on a sustainable journey.
             </h5>
           </Box>
-        </Flex>
+          </Flex>
+        }
       </div>
     </GoogleOAuthProvider>
   );
 }
+
+
