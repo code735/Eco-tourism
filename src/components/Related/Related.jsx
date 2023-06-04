@@ -17,21 +17,26 @@ const Related = ({ title, price, location, image ,review}) => {
 
 
     return (
-            <Box className="related-box" background={'#0000006b'} padding={'20px'} borderRadius={'10px'}>
+            <Box className="related-box"borderRadius={'10px'} position={'relative'}>
                 <Image className="poster" src={image} alt={title} borderRadius={'10px'}/>
-                <Flex className='right-box' color={'white'} padding={'10px 0'} flexDirection={'column'} gap={'20px'}>
-                    <Heading as='h3' fontSize={'1.5rem'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{location}</Heading>
-                    <Flex
-                    alignItems={'center'}
-                    justifyContent={'space-between'}
-                    >
-                        <Button color={'black'} width={'110px'}>Buy</Button>
-                        <Button color={'black'} width={'110px'}>Add</Button>
-                    </Flex>
+                <Flex className='right-box' 
+                color={'white'} 
+                padding={'10px 0'} 
+                flexDirection={'column'} 
+                alignItems={'center'}
+                justifyContent={'center'} 
+                gap={'20px'}
+                position={'absolute'}
+                top={'0'}
+                left={'0'}
+                w={'100%'}
+                height={'100%'}
+                background={'#0000007a'}
+                borderRadius={'10px'}
+                >
+                    <Heading as='h3' textAlign={'center'} fontSize={'2.4rem'} fontFamily={'Estonia,cursive'} fontWeight={'500'}>{location}</Heading>
                 </Flex>
             </Box>
-
-
     )
 }
 

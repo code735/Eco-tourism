@@ -71,7 +71,7 @@ const Details = () => {
         </div>
       </header>
       <Box>
-
+        <Heading></Heading>
         <SimpleGrid columns={4} spacing={5} m={10}>
           {
             city.activity && city.activity.map((ele) => {

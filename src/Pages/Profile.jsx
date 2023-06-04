@@ -11,7 +11,7 @@ export default function Profile() {
   const [localStorageUser, setLocalStorageUser] = useState(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = localStorage.getItem('user_obj');
     if (storedUser) {
       setLocalStorageUser(JSON.parse(storedUser));
     }
