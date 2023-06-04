@@ -10,6 +10,7 @@ import axios from "axios";
 import Bottom from '../../components/Bottom/Bottom'
 import Map from '../../components/Map/Map'
 import Navbar from '../../components/Navbar.jsx/Navbar'
+import { Link } from 'react-router-dom'
 
 
 
@@ -66,7 +67,9 @@ const Details = () => {
           {/* <button className='banner-button'>Book Now</button>
             <button className='banner-button'>Explore</button> */}
          <Center mt={'7%'}>
-          <Button className='banner-button' background={'transparent'} border={'2px solid white'} _hover={{}}>Book Now</Button>
+          <Link to={'/payment'}>
+            <Button className='banner-button' background={'transparent'} border={'2px solid white'} _hover={{}}>Book Now</Button>
+          </Link>
          </Center>
         </div>
       </header>
