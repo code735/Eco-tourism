@@ -10,6 +10,7 @@ import axios from "axios";
 import Bottom from '../../components/Bottom/Bottom'
 import Map from '../../components/Map/Map';
 import Booking from '../../components/Booking/Booking'
+import Navbar from '../../components/Navbar.jsx/Navbar'
 
 
 
@@ -22,7 +23,7 @@ const Details = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/city/${id}`)
+    axios.get(`https://eco-tourism-backend.onrender.com/city/${id}`)
       .then((res) => {
         setCity(res.data);
         console.log(city);
@@ -44,26 +45,36 @@ const Details = () => {
 
   return (
     <div className='main-box'>
+      <Box background={'transparent'} position={'absolute'} zIndex={'2'} padding={'2% 3%'} width={'100%'}>
+        <Navbar/>
+      </Box>
       <header className='banner'
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(${city.image})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed"
+          backgroundAttachment: "fixed",
+          position:'relative',
+          zIndex:"1"
         }}>
+          <Box position={'absolute'} zIndex={'-1'} top={'0'} left={'0'} width={'100vw'} height={'100vh'} background={'#0000008f'}></Box>
         <div className='banner-contents'>
           <Center>
-          <h1 className='banner-title'>{city.cityname}</h1>
-
+          <Heading 
+          as={'h1'} 
+          className='banner-title' 
+          textTransform={'capitalize'}
+          fontSize={'6.5rem'}
+          >{city.cityname}</Heading>
           </Center>
         </div>
         <div className='banner-buttons'>
           {/* <button className='banner-button'>Book Now</button>
             <button className='banner-button'>Explore</button> */}
-         <Center>
-         <Button className='banner-button' colorScheme='pink' onClick={handleBook}>Book Now</Button>
-          <Button className='banner-button' colorScheme='pink' onClick={handleClick} >EXPLORE</Button>
+         <Center mt={'7%'}>
+          <Button className='banner-button' background={'transparent'} border={'2px solid white'} _hover={{}}>Book Now</Button>
+          <Button className='banner-button' background={'transparent'} border={'2px solid white'} _hover={{}} onClick={handleClick} >EXPLORE</Button>
          </Center>
         </div>
       </header>

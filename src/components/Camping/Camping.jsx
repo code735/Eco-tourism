@@ -7,7 +7,7 @@ const Camping = () => {
     const [camping, setCamping] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/camping")
+        axios.get("https://eco-tourism-backend.onrender.com/camping")
             .then((res) => {
                 setCamping(res.data);
             })

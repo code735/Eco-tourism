@@ -3,8 +3,10 @@ import React from 'react'
 import home from '../Images/home.svg'
 import circle from '../Images/home_design.png'
 import Navbar from '../components/Navbar.jsx/Navbar'
+import { Preloader } from '../components/Preloader'
 
 export default function Home() {
+  console.log(window.location.href)
   return (
     <Box 
     background={`url(${home})`}
@@ -21,7 +23,6 @@ export default function Home() {
     padding={'3%'}
     overflow={'hidden'}
     >
-
       <Navbar/>
       <Box width={'100%'} height={'100%'} position={'absolute'} top={'0'} left={'0'} background={'#0000006e'} ></Box>
       <Image src={`${circle}`} position={'absolute'} right={'0%'} top={'22%'} width={'32%'} opacity={'28%'}/>
