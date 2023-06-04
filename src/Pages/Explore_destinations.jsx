@@ -5,6 +5,7 @@ import Home from '../Images/home.svg'
 import City from '../components/City/City'
 import { Preloader } from '../components/Preloader'
 import FilterBox from '../components/FilterBox'
+import { Link } from 'react-router-dom'
 
 export default function Explore_destinations() {
   return (

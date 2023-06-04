@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { Flex ,Box,Heading, Text, grid, Spinner} from '@chakra-ui/react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { SEND_DATA_FUNCTION } from '../../Redux/action';
+import { BOOKING_DATA_FUNCTION, SEND_DATA_FUNCTION } from '../../Redux/action';
+import { BOOKING_DATA } from '../../Redux/actionTypes';
 
 const City = () => {
 
@@ -46,7 +47,9 @@ const City = () => {
         >
             {
                 state?state.map((ele,index) => {
-                    return <Link to={`/city/${ele.id}`} key={index}>
+                    return <Link to={`/city/${ele.id}`} key={index} onClick={()=>{
+                        dispatch(BOOKING_DATA_FUNCTION(ele));
+                    }}>
                         <Box textAlign={'center'}>
                             <Box position={'relative'}>
                                 <img src={ele.image} alt="" style={{
