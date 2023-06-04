@@ -11,7 +11,7 @@ import Bottom from '../../components/Bottom/Bottom'
 import Map from '../../components/Map/Map';
 import Booking from '../../components/Booking/Booking'
 import Navbar from '../../components/Navbar.jsx/Navbar'
-
+import { Link } from 'react-router-dom'
 
 
 const Details = () => {
@@ -73,7 +73,9 @@ const Details = () => {
           {/* <button className='banner-button'>Book Now</button>
             <button className='banner-button'>Explore</button> */}
          <Center mt={'7%'}>
+          <Link to='/payment'>
           <Button className='banner-button' background={'transparent'} border={'2px solid white'} _hover={{}}>Book Now</Button>
+          </Link>
           <Button className='banner-button' background={'transparent'} border={'2px solid white'} _hover={{}} onClick={handleClick} >EXPLORE</Button>
          </Center>
         </div>

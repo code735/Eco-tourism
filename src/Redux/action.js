@@ -6,7 +6,8 @@ import {
     LOGIN_FAILURE,
     LOGOUT,
     SEND_TO,
-    SEND_DATA
+    SEND_DATA,
+    BOOKING_DATA
   } from './actionTypes';
   
   export const loginRequest = () => {
@@ -49,3 +50,12 @@ import {
       payload:payload
     }
   } 
+
+
+
+  export const BOOKING_DATA_FUNCTION=(payload)=>{
+    return{
+      type:BOOKING_DATA,
+      payload:payload
+    }
+  }
