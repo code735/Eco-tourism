@@ -25,9 +25,7 @@ export default function AllRoutes() {
           }/>
           <Route path='/city/:id' element={<Details/>}/>
           <Route path='/payment' element={
-            <PrivateRoute>
               <Payment/>
-            </PrivateRoute>
           }/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/plan-a-trip' element={
