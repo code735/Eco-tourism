@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes,Route } from 'react-router'
 import Home from './Home'
-import Payment from './Payment'
+import Payment from './Payment/Payment'
 import Login from './Login'
 import Plan_trip from './Plan_trip'
 import Explore_destinations from './Explore_destinations'
@@ -10,6 +10,7 @@ import About from './About'
 import Profile from './Profile'
 import City from '../components/City/City'
 import Details from './Details/Details'
+import PaymentSucces from './Payment/PaymentSucces'
 
 
 export default function AllRoutes() {
@@ -39,7 +40,9 @@ export default function AllRoutes() {
               <Profile/>
             </PrivateRoute>
           }/>
+          <Route path='/success' element={<PaymentSucces/>}/>
         </Routes>
+      
     </div>
   )
 }
