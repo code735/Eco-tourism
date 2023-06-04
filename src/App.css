@@ -54,3 +54,9 @@ body::-webkit-scrollbar{
 .explore-dest::-webkit-scrollbar{
   display: none;
 }
+
+
+/* Wishlist */
+.cart::-webkit-scrollbar{
+  display: none;
+}

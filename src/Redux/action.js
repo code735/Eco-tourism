@@ -7,7 +7,8 @@ import {
     LOGOUT,
     SEND_TO,
     SEND_DATA,
-    BOOKING_DATA
+    BOOKING_DATA,
+    WISHLIST_ARRAY
   } from './actionTypes';
   
   export const loginRequest = () => {
@@ -57,5 +58,12 @@ import {
     return{
       type:BOOKING_DATA,
       payload:payload
+    }
+  }
+
+  export const WISHLIST_ARRAY_FUNCTION=(payload)=>{
+    return{
+      type:WISHLIST_ARRAY,
+      payload
     }
   }
