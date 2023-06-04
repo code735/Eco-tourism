@@ -23,6 +23,7 @@ export default function Login() {
     console.log(user_obj);
     if (auth) {
       dispatch(loginSuccess(user_obj));
+    localStorage.setItem('user_obj',JSON.stringify(user_obj));
       toast({
         title: 'Login successful!',
         status: 'success',
