@@ -3,7 +3,7 @@ import {
     Box,
     Container,
     Heading,
-    SimpleGrid, Text
+    SimpleGrid, Text, Image, Flex, Button
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import "./Related.css"
@@ -17,28 +17,18 @@ const Related = ({ title, price, location, image ,review}) => {
 
 
     return (
-
-
-
-            <Box className="related-box" p={4} borderWidth='1px' borderColor='gray.200'>
-                <img className="poster" src={image} alt={title} />
-                <Box className='right-box'>
-                    <Heading as='h3' size='lg' noOfLines={2} >{location}</Heading>
-                    <Text >{title}</Text>
-                    <Heading as='h3' size='sm' style={{ lineHeight: "3", margin: "5px" }} >From <span style={{ color: '#00b5b7' }}>₹{price}</span>/per person</Heading>
-
-                    <Box display='flex' mt='2' alignItems='center'>
-                        {Array(5)
-                            .fill('')
-                            .map((_, i) => (
-                                <StarIcon
-                                    key={i}
-                                    color={i < rating ? 'teal.500' : 'gray.300'}
-                                />
-                            ))}
-                        <Box as='span' ml='2' color='gray.600' fontSize='sm'>{review} reviews</Box>
-                    </Box>
-                </Box>
+            <Box className="related-box" background={'#0000006b'} padding={'20px'} borderRadius={'10px'}>
+                <Image className="poster" src={image} alt={title} borderRadius={'10px'}/>
+                <Flex className='right-box' color={'white'} padding={'10px 0'} flexDirection={'column'} gap={'20px'}>
+                    <Heading as='h3' fontSize={'1.5rem'} textOverflow={'ellipsis'} overflow={'hidden'} whiteSpace={'nowrap'}>{location}</Heading>
+                    <Flex
+                    alignItems={'center'}
+                    justifyContent={'space-between'}
+                    >
+                        <Button color={'black'} width={'110px'}>Buy</Button>
+                        <Button color={'black'} width={'110px'}>Add</Button>
+                    </Flex>
+                </Flex>
             </Box>
 
 

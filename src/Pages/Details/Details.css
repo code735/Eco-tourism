@@ -33,3 +33,7 @@
 .main-box{
   background-color: #f8f8f8;
 }
+
+.main-box::-webkit-scrollbar{
+  display: none;
+}
