@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE, SEND_TO, LOGOUT, SEND_DATA, BOOKING_DATA} from './actionTypes';
+import { LOGIN_SUCCESS, LOGIN_FAILURE, SEND_TO, LOGOUT, SEND_DATA, BOOKING_DATA, WISHLIST_ARRAY} from './actionTypes';
 
 const initialState = {
   isLoading: false,
@@ -7,7 +7,8 @@ const initialState = {
   error: null,
   privateroute:"/",
   cityData:undefined,
-  booking_place:undefined
+  booking_place:undefined,
+  wishlistArray:[]
 };
 
 const reducer = (state = initialState, action) => {
@@ -49,6 +50,11 @@ const reducer = (state = initialState, action) => {
       return{
         ...state,
         booking_place:action.payload
+      }
+    case WISHLIST_ARRAY:
+      return{
+        ...state,
+        wishlistArray:action.payload
       }
     default:
       return state;

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Details.css"
-import { Button, Box, Heading, SimpleGrid ,Center} from '@chakra-ui/react'
+import { Button, Box, Heading, SimpleGrid ,Center, Flex} from '@chakra-ui/react'
 import Related from '../../components/Related/Related'
 import About from '../../components/About/About'
 import Camping from '../../components/Camping/Camping'
@@ -58,6 +58,7 @@ const Details = () => {
           className='banner-title' 
           textTransform={'capitalize'}
           fontSize={'6.5rem'}
+          fontFamily={'Italiana, serif'}
           >{city.cityname}</Heading>
           </Center>
         </div>
@@ -66,29 +67,22 @@ const Details = () => {
             <button className='banner-button'>Explore</button> */}
          <Center mt={'7%'}>
           <Button className='banner-button' background={'transparent'} border={'2px solid white'} _hover={{}}>Book Now</Button>
-          <Button className='banner-button' background={'transparent'} border={'2px solid white'} _hover={{}} onClick={handleClick} >EXPLORE</Button>
          </Center>
         </div>
       </header>
-      <Box>
-        <Heading></Heading>
-        <SimpleGrid columns={4} spacing={5} m={10}>
+      <Box textAlign={'center'}>
+        <Heading as={'h2'} fontSize={'3rem'} color={'white'} fontFamily={'Italiana, serif'}>Included in package  . . .</Heading>
+        <Flex justifyContent={'center'} p={'5%'} gap={'30px'}>
           {
             city.activity && city.activity.map((ele) => {
               return <Related key={ele.id} {...ele} />
             })
           }
-        </SimpleGrid>
-        <Box ref={ref}>
-        <Bottom />
-        </Box>
+        </Flex>
         <Box  style={{margin:"40px"}}>
           <About about={city.about}/>
         </Box>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <Camping />
-        <Map/>
-        
+        <Map/>        
       </Box>
     </Box>
 
