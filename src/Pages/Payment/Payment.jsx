@@ -1,7 +1,7 @@
 
 import { useSelector } from 'react-redux'
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import Home from '../../Images/home.svg'
+import Home from '../../Images/home.jpg'
 import {
   Accordion,
   AccordionButton,

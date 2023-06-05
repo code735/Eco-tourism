@@ -7,9 +7,32 @@ const CityComponent = ({ data, dispatch, BOOKING_DATA_FUNCTION, toggleWishlist }
   return (
     <>
       {data.map((ele, index) => (
-        <Box key={index} textAlign="center" color={'white'}>
+        <Box key={index} textAlign="center">
           <Box position="relative">
             <Link to={`/city/${ele.id}`} onClick={() => dispatch(BOOKING_DATA_FUNCTION(ele))}>
+              <Heading
+                as="h3"
+                padding="5px"
+                borderRadius="10px"
+                textOverflow="ellipsis"
+                overflow="hidden"
+                whiteSpace="nowrap"
+                fontWeight="500"
+                fontFamily={'Italiana, serif'}
+                fontSize={'1.4rem'}
+                position="absolute"
+                width="100%"
+                height="100%"
+                display={'flex'}
+                justifyContent="center"
+                alignItems="center"
+                top="0"
+                left="0"
+                bg="#0000009c"
+                textTransform="capitalize"
+              >
+                {ele.cityname}
+              </Heading>
               <img
                 src={ele.image}
                 alt=""
@@ -26,11 +49,13 @@ const CityComponent = ({ data, dispatch, BOOKING_DATA_FUNCTION, toggleWishlist }
               position="absolute"
               top="0"
               left="0"
-              background="white"
+              background="#0000006b"
               padding="5px 20px"
-              color="black"
+              color="darkgray"
               borderTopLeftRadius="10px"
               borderBottomRightRadius="10px"
+              fontFamily={'Italiana, serif'}
+              zIndex={'1'}
             >
               {ele.terrain}
             </Heading>
@@ -39,10 +64,12 @@ const CityComponent = ({ data, dispatch, BOOKING_DATA_FUNCTION, toggleWishlist }
               fontSize="1.2rem"
               position="absolute"
               top="0"
+              zIndex={'1'}
               right="0"
-              background="white"
+              fontFamily={'Italiana, serif'}
+              background="#0000006b"
               padding="5px 20px"
-              color="black"
+              color={ele.wishlist ?"white":"darkgray"}
               borderTopRightRadius="10px"
               borderBottomLeftRadius="10px"
               className={`wishlist ${ele.wishlist ? 'active' : ''}`}
@@ -51,22 +78,7 @@ const CityComponent = ({ data, dispatch, BOOKING_DATA_FUNCTION, toggleWishlist }
               {ele.wishlist ? <AiFillHeart /> : <AiOutlineHeart />}
             </Box>
           </Box>
-          <Flex justifyContent="space-between">
-            <Heading
-              as="h3"
-              padding="5px"
-              borderRadius="10px"
-              width="100px"
-              textOverflow="ellipsis"
-              overflow="hidden"
-              whiteSpace="nowrap"
-              fontWeight="500"
-              size="sm"
-              mt="2%"
-              textTransform="capitalize"
-            >
-              {ele.cityname}
-            </Heading>
+          <Flex justifyContent="space-between" alignItems={'center'}>
             <Heading
               as="h3"
               padding="5px"
@@ -76,11 +88,13 @@ const CityComponent = ({ data, dispatch, BOOKING_DATA_FUNCTION, toggleWishlist }
               overflow="hidden"
               whiteSpace="nowrap"
               fontWeight="500"
-              size="sm"
+              fontFamily={'Italiana, serif'}
               mt="2%"
+              color={'darkgray'}
+              fontSize={'1.5rem'}
               textTransform="capitalize"
             >
-              Approx: ₹{ele.price}
+              ₹{ele.price}
             </Heading>
           </Flex>
         </Box>
