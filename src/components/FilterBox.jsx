@@ -52,8 +52,9 @@ export default function FilterBox() {
   return (
     <Box width={'40%'} margin={'0 auto'} marginTop={'5%'} paddingTop={'5%'}>
         <Flex gap={'20px'} padding={'4% 0'}>
-          <Input color={'white'} name='search' placeholder='Search by place' _placeholder={{
-            color:"white"
+          <Input color={'white'} background={'#00000063'} outline={'none'} border={'none'} name='search' placeholder='Search by place' _placeholder={{
+            color:"white",
+            fontFamily:'Italiana, serif',
           }} onChange={(e)=>{
             setsearchterm(e.currentTarget.value)}}/>
           {/* <Button background={'transparent'} border={'1px solid white'} color={'white'}
@@ -65,10 +66,10 @@ export default function FilterBox() {
           }>Search</Button> */}
         </Flex>
         <Flex py={'4%'} alignItems={'center'} justifyContent={'space-between'} gap={'20px'}>
-          <Heading color={'white'} fontSize={'1.3rem'}>Sort By Price : </Heading>
-          <Select value={selectOpt} onChange={(e)=>{
+          <Heading color={'white'} fontSize={'1.3rem'} fontFamily={'Italiana, serif'}>Sort By Price : </Heading>
+          <Select value={selectOpt} fontFamily={'Italiana, serif'} onChange={(e)=>{
             handleoptchange(e.currentTarget.value)
-          }} color={'white'} width={'50%'}>
+          }} color={'white'} width={'50%'} background={'#00000063'} outline={'none'} border={'none'} >
             <option value="default"  style={{
               color:"black"
             }}
@@ -91,10 +92,10 @@ export default function FilterBox() {
           </Select>
         </Flex>
         <Flex py={'4%'} alignItems={'center'} justifyContent={'space-between'} gap={'20px'}>
-          <Heading color={'white'} fontSize={'1.3rem'}>Filter Places By Terrain : </Heading>
-          <Select value={selectOpt} onChange={(e)=>{
+          <Heading color={'white'} fontSize={'1.3rem'} fontFamily={'Italiana, serif'}>Filter Places By Terrain : </Heading>
+          <Select fontFamily={'Italiana, serif'} value={selectOpt} onChange={(e)=>{
             handleTerrain(e.currentTarget.value)
-          }} color={'white'} width={'50%'}>
+          }} color={'white'} width={'50%'} background={'#00000063'} outline={'none'} border={'none'} >
             <option value="default"  style={{
               color:"black"
             }}

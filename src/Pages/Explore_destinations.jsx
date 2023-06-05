@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar.jsx/Navbar'
 import { Box } from '@chakra-ui/react'
-import Home from '../Images/home.svg'
+import Home from '../Images/home.jpg'
 import City from '../components/City/City'
 import { Preloader } from '../components/Preloader'
 import FilterBox from '../components/FilterBox'

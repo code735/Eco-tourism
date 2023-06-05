@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar.jsx/Navbar';
-import about from '../Images/about.svg'
+import about from '../Images/home.jpg'
 import { Box } from '@chakra-ui/react';
 
 const About = () => {

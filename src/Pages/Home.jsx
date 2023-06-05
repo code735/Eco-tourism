@@ -1,9 +1,10 @@
 import { Box,Image } from '@chakra-ui/react'
 import React from 'react'
-import home from '../Images/home.svg'
+import home from '../Images/home.jpg'
 import circle from '../Images/home_design.png'
 import Navbar from '../components/Navbar.jsx/Navbar'
 import { Preloader } from '../components/Preloader'
+import { motion } from 'framer-motion'
 
 export default function Home() {
   console.log(window.location.href)
@@ -25,8 +26,25 @@ export default function Home() {
     >
       <Navbar/>
       <Box width={'100%'} height={'100%'} position={'absolute'} top={'0'} left={'0'} background={'#0000006e'} ></Box>
-      <Image src={`${circle}`} position={'absolute'} right={'0%'} top={'22%'} width={'32%'} opacity={'28%'}/>
-      
+      <motion.div
+              style={{
+                width: 500,
+                height: 500,
+                position:'absolute',
+                bottom:"0",
+                right:"0"
+              }}
+              animate={{
+                rotate: [0, 360] // Rotate from 0 degrees to 360 degrees
+              }}
+              transition={{
+                duration: 50, // Animation duration in seconds
+                repeat: Infinity, // Repeat the animation infinitely
+                ease: "linear" // Animation easing function
+              }}
+            >
+              <Image src={`${circle}`} width={'100%'}  opacity={'28%'}/>
+      </motion.div>
       <Box position={'relative'} className='homepage-text'>
         <h4 
         className='homepage-heading'
