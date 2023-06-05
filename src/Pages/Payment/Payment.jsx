@@ -104,10 +104,9 @@ export default function Payment() {
         <Box >
           <Navbar />
         </Box>
-        <Text fontSize={"30"} fontWeight="700" color={"white"}>
+        <Text fontSize={"30"} fontWeight="700" color={"white"} mb={'4%'} fontFamily={'Italiana, serif'}>
           <ArrowBackIcon /> Confirm Your Booking
         </Text>
-        <Text>&nbsp;</Text>
         <Stack
           direction={{
             sm: "column",
@@ -117,9 +116,11 @@ export default function Payment() {
           }}
           width={"100%"}
           m={"auto"}
+          border={'none'}
         >
           <VStack
             backdropBlur={'50px'}
+            border={'none'}
             width={{
               sm: "100%",
               md: "100%",
@@ -135,9 +136,9 @@ export default function Payment() {
               background={'#00000033'}
               backdropFilter={'blur(50px)'}
             >
-              <AccordionItem>
+              <AccordionItem border={'none'}>
                 <h2>
-                  <AccordionButton borderRadius={"10"}>
+                  <AccordionButton borderRadius={"10"}  fontFamily={'Italiana, serif'}>
                     <Box
                       as="header"
                       borderRadius={"10"}
@@ -148,7 +149,7 @@ export default function Payment() {
                       color={"white"}
 
                     >
-                      <Text>Guest Information</Text>
+                      <Text  fontFamily={'Italiana, serif'}>Guest Information</Text>
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -157,77 +158,102 @@ export default function Payment() {
                   <form onSubmit={handleSubmit}>
                     <VStack spacing="4">
                       <FormControl isRequired>
-                        <FormLabel>Date of Visit</FormLabel>
+                        <FormLabel fontFamily={'Italiana, serif'}>Date of Visit</FormLabel>
                         <Input
+                          border={'none'}
+                          background={'blackAlpha.500'}
                           type="date"
                           name="dov"
                           value={formData.dov}
                           onChange={handleChange}
+                          fontFamily={'Italiana, serif'}
                         />
                       </FormControl>
                       <FormControl isRequired>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel fontFamily={'Italiana, serif'}>Name</FormLabel>
                         <Input
+                          border={'none'}
+                          background={'blackAlpha.500'}
                           type="text"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
+                          fontFamily={'Italiana, serif'}
                         />
                       </FormControl>
 
 
                       <FormControl isRequired>
-                        <FormLabel>Category</FormLabel>
+                        <FormLabel fontFamily={'Italiana, serif'}>Category</FormLabel>
                         <Select
+                          border={'none'}
+                          background={'blackAlpha.500'}
                           name="category"
                           value={formData.category}
                           onChange={handleChange}
                           placeholder="Select Category"
-                          color={"black"}
+                          fontFamily={'Italiana, serif'}
                         >
-                          <option value="IndianAdult" >Indian Adult</option>
-                          <option value="IndianChild">Indian Child</option>
-                          <option value="ForeignAdult">Foreign Adult</option>
-                          <option value="ForeignChild">Foreign Child</option>
+                          <option value="IndianAdult"  style={{
+                            color:"black"
+                          }}>Indian Adult</option>
+                          <option value="IndianChild" style={{
+                            color:"black"
+                          }}>Indian Child</option>
+                          <option value="ForeignAdult" style={{
+                            color:"black"
+                          }}>Foreign Adult</option>
+                          <option value="ForeignChild" style={{
+                            color:"black"
+                          }}>Foreign Child</option>
                         </Select>
                       </FormControl>
 
                       <FormControl isRequired>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel fontFamily={'Italiana, serif'}>Email</FormLabel>
                         <Input
+                          border={'none'}
+                          background={'blackAlpha.500'}
                           type="email"
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
+                          fontFamily={'Italiana, serif'}
                         />
                       </FormControl>
 
                       <FormControl isRequired>
-                        <FormLabel>Phone Number</FormLabel>
+                        <FormLabel fontFamily={'Italiana, serif'}>Phone Number</FormLabel>
                         <Input
+                          border={'none'}
+                          background={'blackAlpha.500'}
                           type="tel"
                           name="phoneNumber"
+                          fontFamily={'Italiana, serif'}
                           value={formData.phoneNumber}
                           onChange={handleChange}
                         />
                       </FormControl>
 
                       <FormControl isRequired>
-                        <FormLabel>Address</FormLabel>
+                        <FormLabel fontFamily={'Italiana, serif'}>Address</FormLabel>
                         <Input
+                          border={'none'}
+                          background={'blackAlpha.500'}
                           type="text"
+                          fontFamily={'Italiana, serif'}
                           name="address"
                           value={formData.address}
                           onChange={handleChange}
                         />
-                        <Button mt={5} type="submit" colorScheme={"orange"}>
+                        <Button mt={5} type="submit" colorScheme={"orange"} fontFamily={'Italiana, serif'}>
                           Submit and Accept Terms and Conditions
                         </Button>
                       </FormControl>
                     </VStack>
                   </form>
                   {formsubmit ? (
-                    <Alert mt={"5"} status="success">
+                    <Alert mt={"5"} status="success" fontFamily={'Italiana, serif'}>
                       <AlertIcon />
                       Data uploaded to the server. Fire on! Reserve Your Units !
                     </Alert>
@@ -237,7 +263,7 @@ export default function Payment() {
                 </AccordionPanel>
               </AccordionItem>
 
-              <AccordionItem>
+              <AccordionItem border={'none'} fontFamily={'Italiana, serif'}>
                 <h2>
                   <AccordionButton>
                     <Box
@@ -247,27 +273,28 @@ export default function Payment() {
                       fontSize={"18"}
                       fontWeight={"600"}
                       color={useColorModeValue("white")}
+                      fontFamily={'Italiana, serif'}
                     >
-                      <Text>Property Policy</Text>
+                      <Text fontFamily={'Italiana, serif'}>Property Policy</Text>
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4} color={"white"}>
-                  <Text>
+                <AccordionPanel pb={4} color={"white"} fontFamily={'Italiana, serif'}>
+                  <Text fontFamily={'Italiana, serif'}>
                     - Guests are required to pay a 21% advance at the time of
                     booking itself. The entire balance needs to be cleared upon
                     arrival at the property during check-in.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- Our standard check-in time is 12 PM and the standard
                     check-out time is 10 AM. Early check-in and late check-out
                     requests are subject to availability, and may also attract an
                     additional fee at the property's discretion.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- We strictly DO NOT allow a group of more than 8
                     people. In case of a group of 4 or more, you might be
                     purposefully allotted different dorm rooms. Further, if the
@@ -277,44 +304,44 @@ export default function Payment() {
                     on-spot cancellation without refunds.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- Children below 18 years of age are not permitted
                     entry/stay at any of our hostels, with or without guardians.
                     We do not recommend families.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- We only accept a government ID as valid identification
                     proof. No local IDs shall be accepted at the time of check-in.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- Guests are not permitted to bring outsiders inside the
                     hostel campus.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- We believe in self-help and do not provide luggage
                     assistance or room services.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- Drugs and any substance abuse is strictly banned
                     inside and around the property.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- Alcohol consumption is strictly prohibited in and
                     around the property premises.
                   </Text>
                   <Spacer />
-                  <Text>
+                  <Text fontFamily={'Italiana, serif'}>
                     <br />- Right to admission reserved
                   </Text>
                 </AccordionPanel>
               </AccordionItem>
 
-              <AccordionItem>
+              <AccordionItem border={'none'}>
                 <h2>
                   <AccordionButton>
                     <Box
@@ -381,11 +408,11 @@ export default function Payment() {
             }}
             padding={"3"}
           >
-            <Text as={"h3"} fontSize={"24"} fontWeight={"700"} color={"white"}>
+            <Text as={"h3"} fontSize={"24"} fontWeight={"700"} color={"white"} fontFamily={'Italiana, serif'}>
               Summary
             </Text>
-            <Text fontSize={"14"} fontWeight={"700"} color={"white"}>
-              4 day & 3 Nights <span style={{ color: "gray" }}>starting from</span> {formData.dov}
+            <Text fontSize={"14"} fontWeight={"700"} color={"white"} fontFamily={'Italiana, serif'}>
+              4 day & 3 Nights <span style={{ color: "#fff" }}>starting from</span> {formData.dov}
             </Text>
             <VStack>
               {/* Hotel Card Starts */}
@@ -398,35 +425,35 @@ export default function Payment() {
                     borderRadius="10"
                   />
                   <VStack align={"baseline"} spacing={"0"}>
-                    <Text fontSize={"14"} fontWeight={"600"} color={"white"} textTransform={"capitalize"}>
+                    <Text fontSize={"14"} fontWeight={"600"} color={"white"} fontFamily={'Italiana, serif'} textTransform={"capitalize"}>
                       {booking_place.cityname}
                     </Text>
-                    <Text fontSize={"16"} fontWeight={"600"} color={"white"}>
+                    <Text fontSize={"16"} fontWeight={"600"} fontFamily={'Italiana, serif'} color={"white"}>
                       ₹{booking_place.price} x 1 Package
                     </Text>
                   </VStack>
                   <Spacer />
-                  <Text fontSize={"16"} fontWeight={"600"} color={"white"}>
+                  <Text fontSize={"16"} fontWeight={"600"} fontFamily={'Italiana, serif'} color={"white"}>
                     ₹{booking_place.price}
                   </Text>
                 </HStack>
-                <Divider />
+                <Box w={'100%'} py={'5px'}/>
                 <HStack width={"100%"} fontSize={18} fontWeight="600">
-                  <Text color={"white"}>Tax</Text>
+                  <Text color={"white"} fontFamily={'Italiana, serif'}>Tax</Text>
                   <Spacer />
-                  <Text color={"white"}>₹{(booking_place.price * 0.12).toFixed(0)}</Text>
+                  <Text color={"white"} fontFamily={'Italiana, serif'}>₹{(booking_place.price * 0.12).toFixed(0)}</Text>
                 </HStack>
                 <HStack width={"100%"} fontSize={18} fontWeight="600">
-                  <Text color={"white"}>Total (tax incl.)</Text>
+                  <Text color={"white"} fontFamily={'Italiana, serif'}>Total (tax incl.)</Text>
                   <Spacer />
-                  <Text color={"white"}>₹{total.toFixed(0)}</Text>
+                  <Text color={"white"} fontFamily={'Italiana, serif'}>₹{total.toFixed(0)}</Text>
                 </HStack>
                 <HStack width={"100%"} fontSize={18} fontWeight="600">
-                  <Text color={"white"}>Payable Now</Text>
+                  <Text color={"white"} fontFamily={'Italiana, serif'}>Payable Now</Text>
                   <Spacer />
-                  <Text color={"white"}>₹{total.toFixed(0)}</Text>
+                  <Text color={"white"} fontFamily={'Italiana, serif'}>₹{total.toFixed(0)}</Text>
                 </HStack>
-                <Divider />
+                <Box w={'100%'} py={'5px'}/>
                 <Checkbox
                   isChecked={formsubmit}
                   colorScheme="orange"
@@ -434,6 +461,7 @@ export default function Payment() {
                   mt={"50px"}
                   onChange={(e) => console.log("eeee", e.target.checked)}
                   color={"white"}
+                  fontFamily={'Italiana, serif'}
                 >
                   I acknowledge and accept the terms and conditions mentioned in
                   the Property Policy & Cancellation Policy.
@@ -443,6 +471,7 @@ export default function Payment() {
                   width={"100%"}
                   colorScheme={"orange"}
                   onClick={onOpen}
+                  fontFamily={'Italiana, serif'}  
                 >
                   Reserve
                 </Button>

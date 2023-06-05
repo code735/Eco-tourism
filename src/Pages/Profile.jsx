@@ -51,7 +51,7 @@ const toggleWishlist = (index) => {
       <Flex className="profile-content" padding={'3% 0'} gap={'5%'}>
 
         <Box color={'white'}>
-          <Heading as={'h1'} pb={'5%'} fontFamily={'Italiana, serif'}>Profile Data</Heading>
+          <Heading as={'h1'} pb={'5%'} fontFamily={'Italiana, serif'} fontWeight={'300'}>Profile Data</Heading>
           <Box className="profile-box" borderRadius={'20px'} padding={'20px'} background={'#00000061'} height={'35vh'}>
           <Flex className="profile-name-and-img" alignItems={'center'} gap={'20px'}>
             <Image src={displayUser ? displayUser.picture : ""} borderRadius={'100%'} width={'70px'} alt="" />
@@ -79,7 +79,7 @@ const toggleWishlist = (index) => {
         </Box>
 
         <Box color={'white'}>
-          <Heading as={'h1'} pb={'3%'} fontFamily={'Italiana, serif'}>Wishlist</Heading>
+          <Heading as={'h1'} pb={'3%'} fontFamily={'Italiana, serif'} fontWeight={'300'}>Wishlist</Heading>
           <SimpleGrid 
           className="cart" 
           flexDirection={'column'} 
@@ -93,7 +93,7 @@ const toggleWishlist = (index) => {
           templateColumns={'repeat(2,1fr)'}
           >
             {/* Render the user's cart content here */}
-            {filteredArray && filteredArray.length!=0 ? <CityComponent data={filteredArray} dispatch={dispatch} BOOKING_DATA_FUNCTION={BOOKING_DATA_FUNCTION} toggleWishlist={toggleWishlist}/>  : <Heading fontFamily={'Italiana, serif'}>No Data Available</Heading>}
+            {filteredArray && filteredArray.length!=0 ? <CityComponent data={filteredArray} dispatch={dispatch} BOOKING_DATA_FUNCTION={BOOKING_DATA_FUNCTION} toggleWishlist={toggleWishlist}/>  : <Heading fontFamily={'Italiana, serif'} fontWeight={'300'}>No Data Available</Heading>}
           </SimpleGrid>
         </Box>
       </Flex>
