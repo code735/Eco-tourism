@@ -73,7 +73,9 @@ const Details = () => {
          </Center>
         </div>
       </header>
-      <Box textAlign={'center'}>
+      <Box textAlign={'center'} borderRadius={'30px'} margin={'0 5%'} padding={'5% 0'} mb={'4%'} style={{
+        backdropFilter:"blur(50px)"
+      }}>
         <Heading as={'h2'} fontSize={'3rem'} color={'white'} fontFamily={'Italiana, serif'}>Included in package  . . .</Heading>
         <Flex justifyContent={'center'} p={'5%'} gap={'30px'}>
           {

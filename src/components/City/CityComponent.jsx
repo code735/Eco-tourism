@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Heading, Flex } from '@chakra-ui/react';
+import { Box, Heading, Flex, useToast } from '@chakra-ui/react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 const CityComponent = ({ data, dispatch, BOOKING_DATA_FUNCTION, toggleWishlist }) => {
+
+  const toast = useToast();
+
   return (
     <>
       {data.map((ele, index) => (
@@ -49,7 +52,7 @@ const CityComponent = ({ data, dispatch, BOOKING_DATA_FUNCTION, toggleWishlist }
               position="absolute"
               top="0"
               left="0"
-              background="#0000006b"
+              background="blackAlpha.700"
               padding="5px 20px"
               color="darkgray"
               borderTopLeftRadius="10px"
@@ -67,36 +70,51 @@ const CityComponent = ({ data, dispatch, BOOKING_DATA_FUNCTION, toggleWishlist }
               zIndex={'1'}
               right="0"
               fontFamily={'Italiana, serif'}
-              background="#0000006b"
+              background="blackAlpha.700"
               padding="5px 20px"
               color={ele.wishlist ?"white":"darkgray"}
               borderTopRightRadius="10px"
               borderBottomLeftRadius="10px"
               className={`wishlist ${ele.wishlist ? 'active' : ''}`}
-              onClick={() => toggleWishlist(index)}
+              onClick={() => {toggleWishlist(index)
+                {ele.wishlist ? toast({
+                  description: "Package added to wishlist",
+                  status: 'success',
+                  duration: 2500,
+                  isClosable: true,
+                }) : toast({
+                  description: "Package removed from wishlist",
+                  status: 'error',
+                  duration: 2500,
+                  isClosable: true,
+                })}
+              }}
             >
               {ele.wishlist ? <AiFillHeart /> : <AiOutlineHeart />}
             </Box>
-          </Box>
-          <Flex justifyContent="space-between" alignItems={'center'}>
             <Heading
               as="h3"
-              padding="5px"
-              borderRadius="10px"
-              width="150px"
+              padding="10px"
+              borderRadius="30px"
+              width="100%"
               textOverflow="ellipsis"
               overflow="hidden"
               whiteSpace="nowrap"
-              fontWeight="500"
+              fontWeight="800"
               fontFamily={'Italiana, serif'}
               mt="2%"
-              color={'darkgray'}
-              fontSize={'1.5rem'}
+              color={'black'}
+              fontSize={'1.1rem'}
               textTransform="capitalize"
+              position={'absolute'}
+              bottom={'0'}
+              background={'#b1b1b1'}
+              borderBottomLeftRadius={'5px'}
+              borderBottomRightRadius={'5px'}
             >
-              ₹{ele.price}
+              Approx Price : ₹{ele.price}
             </Heading>
-          </Flex>
+          </Box>
         </Box>
       ))}
     </>

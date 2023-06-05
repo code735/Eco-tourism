@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Image, Text, Box } from '@chakra-ui/react'
+import { Image, Text, Box, useToast } from '@chakra-ui/react'
 import { useColorMode } from '@chakra-ui/system';
 import { useNavigate } from 'react-router';
 import logo from "../../Images/logo.svg"
-import home from '../../Images/home.svg'
+import home from '../../Images/home.jpg'
 // import PreLoader from '../PreLoader';
 import { Preloader } from '../../components/Preloader';
 
@@ -15,28 +15,36 @@ export default function PaymentSucces() {
         return randomId.toString();
     }
 
+    const toast = useToast();
+    toast({
+        description: "Booking complete !",
+        status: 'success',
+        duration: 2500,
+        isClosable: true,
+      })
+
     const [loading, setLoading] = useState(false)
     const { colormode, togglecolormode } = useColorMode();
 
 
-    useEffect(() => {
-        setLoading(true)
-        window.addEventListener('load', () => {
-            setLoading(false);
-        });
-    }, [])
+    // useEffect(() => {
+    //     setLoading(true)
+    //     window.addEventListener('load', () => {
+    //         setLoading(false);
+    //     });
+    // }, [])
 
-    useEffect(() => {
-        setLoading(true)
-        setTimeout(() => {
-            setLoading(false)
-        }, 2000)
-    }, [])
+    // useEffect(() => {
+    //     setLoading(true)
+    //     setTimeout(() => {
+    //         setLoading(false)
+    //     }, 2000)
+    // }, [])
 
     let navigate = useNavigate();
 
     setTimeout(() => {
-        navigate('/profile')
+        navigate('/')
     }, 5000);
 
     const ID = generateRandomId();
@@ -59,14 +67,15 @@ export default function PaymentSucces() {
                 justifyContent="center"
                 alignItems="center"
                 flexDirection="column"
-                bg={colormode == "light" ? "gray.800" : "white"}
-                color={colormode == "light" ? "white" : "gray.800"}
                 p={20}
+                style={{
+                    backdropFilter:"blur(20px)"
+                }}
                 borderRadius={30}
             >
                 <Image src={logo} width='200px' />
-                <Text fontWeight='600' fontSize='2rem'>Your Package is Booked !</Text>
-                <Text fontWeight='600' fontSize='2rem'>Booking ID : #{ID}</Text>
+                <Text fontWeight='bold' fontSize='3rem' color={'white'} fontFamily={'Italiana, serif'}>Your Package is Booked !</Text>
+                <Text fontWeight='bold' fontSize='2rem' fontFamily={'Italiana, serif'} color={'white'}>Booking ID : #{ID}</Text>
             </Box>
         </div>}</>
     )
