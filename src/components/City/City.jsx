@@ -14,7 +14,7 @@ const City = () => {
   const { cityData } = useSelector(state => state);
 
   useEffect(() => {
-    axios.get(`https://eco-tourism-backend.onrender.com/city`)
+    axios.get(`https://blush-tadpole-ring.cyclic.app/city`)
       .then((Response) => {
         dispatch(SEND_DATA_FUNCTION(Response.data));
       });

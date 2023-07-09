@@ -14,13 +14,13 @@ export default function FilterBox() {
 
   const handleoptchange=(order)=>{
     if(order==="default"){
-      axios.get(`https://eco-tourism-backend.onrender.com/city`)
+      axios.get(`https://blush-tadpole-ring.cyclic.app/city`)
       .then((Response)=>{
           dispatch(SEND_DATA_FUNCTION(Response.data));
       })
     }
     else{
-      axios.get(`https://eco-tourism-backend.onrender.com/city?_sort=price&_order=${order}`)
+      axios.get(`https://blush-tadpole-ring.cyclic.app/city?_sort=price&_order=${order}`)
       .then((Response)=>{
         dispatch(SEND_DATA_FUNCTION(Response.data));
       })
@@ -29,13 +29,13 @@ export default function FilterBox() {
 
   const handleTerrain=(location)=>{
     if(location==="default"){
-      axios.get(`https://eco-tourism-backend.onrender.com/city`)
+      axios.get(`https://blush-tadpole-ring.cyclic.app/city`)
       .then((Response)=>{
           dispatch(SEND_DATA_FUNCTION(Response.data));
       })
     }
     else{
-      axios.get(`https://eco-tourism-backend.onrender.com/city?q=${location}`)
+      axios.get(`https://blush-tadpole-ring.cyclic.app/city?q=${location}`)
       .then((Response)=>{
         dispatch(SEND_DATA_FUNCTION(Response.data));
       })
@@ -43,7 +43,7 @@ export default function FilterBox() {
   }
 
   useEffect(()=>{
-      axios.get(`https://eco-tourism-backend.onrender.com/city?q=${searchterm}`)
+      axios.get(`https://blush-tadpole-ring.cyclic.app/city?q=${searchterm}`)
         .then((Response)=>{
           dispatch(SEND_DATA_FUNCTION(Response.data));
         })

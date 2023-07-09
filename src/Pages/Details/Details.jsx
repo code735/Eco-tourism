@@ -22,7 +22,7 @@ const Details = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`https://eco-tourism-backend.onrender.com/city/${id}`)
+    axios.get(`https://blush-tadpole-ring.cyclic.app/city/${id}`)
       .then((res) => {
         setCity(res.data);
         console.log(city);
